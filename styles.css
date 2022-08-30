@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+
+:root {
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    font-size: 14px;
+    --Font-Montserrat: 'Montserrat', sans-serif;
+    --Font-Fraunces: 'Fraunces', serif;
+    --Weight-500Mont: 500;
+    --Weight-700Mont: 700;
+    --Weight-700Fraun: 700;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containter{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--Cream);
+}
+
+.bodyCard{
+    width: 345px;
+    margin: 2em 1em;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--White);
+}
+
+.desktop{
+    display: none;
+}
+
+.mobile{
+    display: block
+}
+
+.cardContents{
+    padding: 1.8em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+.cardContents .contentsPrev{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: var(--Font-Montserrat);
+    font-size: 0.75em;
+    font-weight: var(--Weight-500Mont);
+    color: var(--Dark-grayish-blue);
+}
+
+.cardContents .contentsHead{
+    font-family: var(--Font-Fraunces);
+    font-size: 2.5em;
+    font-weight: var(--Weight-700Fraun);
+    color: var(--Very-dark-blue)
+}
+
+.cardContents .contentsInfo{
+    
+    font-family: var(--Font-Montserrat);
+    font-weight: var(--Weight-500Mont);
+    color: var(--Dark-grayish-blue);
+}
+
+.cardContents .contentsStore{
+    margin-top: 0.4em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    align-items: center;
+    gap: 1em;
+    justify-content: start;
+}
+
+.cardContents .contentsStore .storeTotal{
+    grid-column: 1/2;
+    font-family: var(--Font-Fraunces);
+    font-size: 2.5em;
+    font-weight: var(--Weight-700Fraun);
+    color: var(--Dark-cyan);
+}
+
+.cardContents .contentsStore .storeDiscount{
+    grid-column: 2/3;
+    font-family: var(--Font-Montserrat);
+    font-weight: var(--Weight-500Mont);
+    color: var(--Dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+.cardContents .contentsStore .storeCart{
+    grid-column: 1/3;
+    padding: 1em;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--Dark-cyan);
+    font-family: var(--Font-Montserrat);
+    font-weight: var(--Weight-700Mont);
+    color: var(--White);
+    
+}
+
+@media (min-width: 900px) {
+    .desktop{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
+    .cardImage{
+        width: 50%;
+    }
+    .bodyCard{
+        width: 600px;
+        flex-direction: row;
+    }
+    .cardContents{
+        padding: 2em;
+        justify-content: space-between;
+    }
+}
